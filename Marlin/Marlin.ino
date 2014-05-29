@@ -1,5 +1,7 @@
 /* -*- c++ -*- */
 
+// Use Arduino MEGA 2560
+
 /*
     Reprap firmware based on Sprinter and grbl.
  Copyright (C) 2011 Camiel Gubbels / Erik van der Zalm
