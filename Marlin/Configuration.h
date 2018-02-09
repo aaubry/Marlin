@@ -138,7 +138,7 @@
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Antoine Aubry, HelloBEEPrusa)" // Who made the changes.
 #define SHOW_BOOTSCREEN
 #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 WEBSITE_URL         // will be shown during bootup in line 2
@@ -191,7 +191,7 @@
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
-//#define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
+#define MACHINE_UUID " 6382064a-7f16-4ac8-92c6-8f9755bd92ac"
 
 // This defines the number of extruders
 // :[1, 2, 3, 4, 5]
@@ -227,18 +227,19 @@
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
 // For the other hotends it is their distance from the extruder 0 hotend.
+#define HOTEND_OFFSET_X {0.0, 64.50 /*- 2.07*/ - 2.53} // (in mm) for each extruder, offset of the hotend on the X axis
+#define HOTEND_OFFSET_Y {0.0,  0.00 /*+ 0.43*/ - 0.32} // (in mm) for each extruder, offset of the hotend on the Y axis
 
-
-//hBp - Checks if bowden to apply the correct offset
-#ifndef hBp_Bowden
-	//direct drive
-	#define HOTEND_OFFSET_X {0.0, 67.5} // (in mm) for each extruder, offset of the hotend on the X axis
-	#define HOTEND_OFFSET_Y {0.0, 0.30}  // (in mm) for each extruder, offset of the hotend on the Y axis
-#else
-	//has bowden
-	#define HOTEND_OFFSET_X {0.0, 13.0} // (in mm) for each extruder, offset of the hotend on the X axis
-	#define HOTEND_OFFSET_Y {0.0, 0.00}  // (in mm) for each extruder, offset of the hotend on the Y axis
-#endif
+// //hBp - Checks if bowden to apply the correct offset
+// #ifndef hBp_Bowden
+// 	//direct drive
+// 	#define HOTEND_OFFSET_X {0.0, 67.5} // (in mm) for each extruder, offset of the hotend on the X axis
+// 	#define HOTEND_OFFSET_Y {0.0, 0.30}  // (in mm) for each extruder, offset of the hotend on the Y axis
+// #else
+// 	//has bowden
+// 	#define HOTEND_OFFSET_X {0.0, 13.0} // (in mm) for each extruder, offset of the hotend on the X axis
+// 	#define HOTEND_OFFSET_Y {0.0, 0.00}  // (in mm) for each extruder, offset of the hotend on the Y axis
+// #endif
 	
 /**
  * Select your power supply here. Use 0 if you haven't connected the PS_ON_PIN
